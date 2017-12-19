@@ -1,0 +1,15 @@
+[Unit]
+Description=Button vSpot Service
+After=network.target auditd.service
+
+[Service]
+WorkingDirectory=/opt/button
+#EnvironmentFile=/etc/button.conf
+#ExecStart=/usr/bin/v-daemon -v -H "v.realglobe.work" -P "https" -i "jp.realglobe.daisan.button-01" /opt/button/button_subject.sh
+ExecStart=/opt/button/button_subject_service.sh
+Restart=always
+#StartLimitInterval=5
+#StartLimitBurst=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Main LED Updater Service
+After=network.target auditd.service
+
+[Service]
+WorkingDirectory=/opt/button
+ExecStart=/opt/button/led_updater.sh
+Restart=always
+#StartLimitInterval=5
+#StartLimitBurst=1
+
+[Install]
+WantedBy=multi-user.target

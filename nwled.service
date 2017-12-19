@@ -1,0 +1,14 @@
+[Unit]
+Description=Network Status LED Service
+After=network.target auditd.service
+
+[Service]
+WorkingDirectory=/opt/button
+#EnvironmentFile=/etc/button.conf
+ExecStart=/opt/button/nwled.sh
+Restart=always
+#StartLimitInterval=5
+#StartLimitBurst=1
+
+[Install]
+WantedBy=multi-user.target
